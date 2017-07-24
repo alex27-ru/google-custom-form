@@ -73,3 +73,5 @@ Good luck! I have put my own sample form online [here](http://mikeheavers.com/la
 Если нужно больше input-ов, то добавляем переменных q1ID в скрипт со значениями из атрибутов взятых (как было описанно выше) из input.
     Добавить var inputq3 = encodeURIComponent($('#input-q3').val()); и т.д.
     Далее нужно дополнить var submitURL по примеру добавления q2ID, т.е. '+ "&" + q3ID + "=" + inputq3'
+    
+iframe убирать не нужно, иначе после отправки данных будет перенаправлять на страницу благодарности формы google.
