@@ -64,3 +64,12 @@ etc.
 Good luck! I have put my own sample form online [here](http://mikeheavers.com/lab/google/forms/custom-form.html) and you can view the spreadsheet with the form responses [here](https://docs.google.com/spreadsheets/d/1mzPTZC2YbQpN5IK07Fj4sENj6zajNu6TbFcHo7lD45o).
 
 
+Заходим на рабочую форму и просматриваем исходный код.
+Находим <form action="https://docs.google.com/forms/d/e/.../formResponse" target="_self" method="POST" id="...">
+    и копируем url в baseURL файла index2.html из архива. Причем после formResponse ставим '?'.
+    submitRef пока работает, можно не трогать.
+Находим в input-ах формы атрибуты вида - 'name="entry.782964538"', копируем значение в q1ID, q2ID и т.д.
+Форма работает.
+Если нужно больше input-ов, то добавляем переменных q1ID в скрипт со значениями из атрибутов взятых (как было описанно выше) из input.
+    Добавить var inputq3 = encodeURIComponent($('#input-q3').val()); и т.д.
+    Далее нужно дополнить var submitURL по примеру добавления q2ID, т.е. '+ "&" + q3ID + "=" + inputq3'
